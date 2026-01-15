@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Course Registration Alert",
+    "version": "1.0",
+    "description": "Auto-checks course registration and alerts when open",
+    "permissions": ["tabs", "scripting", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://flexstudent.nu.edu.pk/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
